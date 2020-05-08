@@ -10,8 +10,10 @@
     "apollo-boost": "^0.4.7",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
+    "plotly.js": "^1.54.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-plotly.js": "^2.4.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
