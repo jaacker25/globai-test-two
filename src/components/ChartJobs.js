@@ -61,6 +61,13 @@ jobs.forEach(value=>{
     datesArray.push(dateFormated.toLocaleDateString());
 })
 
+//Implementing Responsive Charts size
+let responsiveSize=window.innerWidth;
+if(window.innerWidth>=750){
+responsiveSize=720;
+}
+
+
 
     return (
         
@@ -77,7 +84,7 @@ data={[
             marker: {color: '#9eb1e2', size:15, line:{color:"#1d3162", width:2}},
           }
         ]}
-        layout={ {width: 720, height: 480, font:{size:15},
+        layout={ {width:responsiveSize, height: 480, font:{size:15},
                   title:{text:'Number of jobs by country',font:{size:25},y:0.9}, 
                   paper_bgcolor: 'transparent', 
                   plot_bgcolor: '#a7d2ef',
@@ -99,7 +106,7 @@ data={[
             marker: {color: '#a2d1e8', size:15, line:{color:"#194d66", width:2}},
           }
         ]}
-        layout={ {width: 720, height: 480, font:{size:15},
+        layout={ {width: responsiveSize, height: 480, font:{size:15},
                   title:{text:'Job posting dates by country',font:{size:25},y:0.9}, 
                   paper_bgcolor: 'transparent', 
                   plot_bgcolor: '#d8e3f4',
