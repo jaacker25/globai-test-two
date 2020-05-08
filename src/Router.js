@@ -15,7 +15,7 @@ const Router = ()=>{
           <BrowserRouter>
             <Switch>
                 <Route exact path= "/" component= { Home } />
-                <Route component= { GoHome } />
+                <Route component= { GoHome } />//Another address will take us to HOME
             </Switch>
           </BrowserRouter>
         </ApolloProvider>

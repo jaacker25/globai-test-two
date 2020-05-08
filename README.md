@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GLOBAI
 
-## Available Scripts
+## Problema 2
 
-In the project directory, you can run:
+Implemente un microproyecto en react js y graphql donde construyan un indicador para un dashboard
+utilizando cualquier tipo de grafica con el que ustedes consideren que pueden representar información
+relevante, esta información la pueden consumir por medio de [api.graphql.jobs](https://api.graphql.jobs/) y la biblioteca
+para la implementación del grafico debe ser [www.plotly.com](https://plotly.com/javascript/).
 
-### `yarn start`
+## Demo
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Puede dar click en el siguiente enlace:
+#### [PROYECTO DEPLOYADO](https://globai-test-2.netlify.app/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+El proyecto es totalmente responsivo y ademas esta implementado como "Progressive Web App".
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://res.cloudinary.com/jaacker25/image/upload/c_scale,w_250/v1588953617/GLOBAI/res-removebg-preview_rnfpm8.png">
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### LightHouse Audit
+<img src="https://res.cloudinary.com/jaacker25/image/upload/c_scale,w_450/v1588953467/GLOBAI/lighthouse_iskcaz.png"> 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Tecnologias implementadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+@apollo/react-hooks "^3.1.5"<br>
+apollo-boost "^0.4.7"<br>
+graphql "^15.0.0"<br>
+graphql-tag "^2.10.3"<br>
+plotly.js "^1.54.1"<br>
+react "^16.13.1"<br>
+react-dom "^16.13.1"<br>
+react-plotly.js "^2.4.0"<br>
+react-router-dom "^5.1.2"<br>
+react-scripts "3.4.1"<br>
 
-### `yarn eject`
+## Acerca del Proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Dificultades encontradas
+El primer reto fue decidir qué graficar.
+La api no cuenta con muchos datos que puedan ser informativos, se descartaron algunas ideas hasta llegar a dos que sí se pudieron implementar.<br>
+Otro reto fue hacer las graficas responsivas, dentro de la documentacion de plotly se ofrecen algunas opciones pero ninguna de ellas tuvo efecto, al parecer es problema de las ultimas versiones de este. Al final se tuvo que buscar otra manera para implementarlo.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sobre las Graficas y la Informacion Recopilada
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="center">
+<img src="https://res.cloudinary.com/jaacker25/image/upload/v1588952237/GLOBAI/plotOne_b4mnwd.webp">
+</p>
+En total existen 80 vacantes en toda la API.<br> 
+La primer Grafica nos indica cuantas vacantes han sido creadas de acuerdo a cada pais.<br>
+Estados Unidos ocupa el primer puesto con 37 vacantes, mientras que Portugal, Francia y Dinamarca ocupan el puesto mas bajo con solo una vacante.
+<p align="center">
+<img src="https://res.cloudinary.com/jaacker25/image/upload/v1588952237/GLOBAI/plotTwo_hba9k3.webp">
+</p>
+En la segunda grafica podemos observar la fecha en que fueron creadas cada una de las vacantes, respecto a cada pais de origen, muchisimas de ellas fueron creadas el mismo día, por lo tanto apreceran encimadas unas a otras, es por eso que si queremos definir el numero de vacantes de cada pais nos guiaremos del primer grafico.<br>
+Aqui vemos una clara tendencia, mientras ha pasado el tiempo mas paises se han sumado a hacer uso de la plataorma, sin embrago, la mayoria de ellos solo han creado postulaciones en una sola fecha determinada.<br>
+Por otro lado Alemania, Estados Unidos y Reino Unido se mantienen constantemente abriendo vacantes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Para hacer uso directo del codigo
 
-## Learn More
+I. Forkear este repositorio o bien descargarlo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+II. En la terminal ingresar: yarn install
+Para instalar todas las dependencias
+ 
+III. En la terminal ingresar: yarn start
+Para Inicializar la aplicacion en localhost:3000

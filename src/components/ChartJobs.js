@@ -7,7 +7,10 @@ import { GET_CITIES } from '../graphql/getCities';
 const ChartJobs=()=>{
  
  const { data: { cities = [] } = {}} = useQuery(GET_CITIES);
- 
+
+//We only need the information about the countries and  dates 
+//of the created post jobs, so we save that data in "jobs" variable
+//as an objects array
  let jobs = [];
 
  cities.forEach(city=>{
@@ -18,36 +21,38 @@ const ChartJobs=()=>{
    })
  })
 
-//For the first chart
+//HERE FIRST CHART DATA
+//we separete the data to obtain two arrays for the x and y axes for the first chart
 let countryArray=[];
 let numOfJobsArray=[];
 
  jobs.sort(( a , b )=>{
-    let nameA=a.country.toLowerCase();
+  let nameA=a.country.toLowerCase();
   let nameB=b.country.toLowerCase();
   if (nameA < nameB) 
-  return -1;
- if (nameA > nameB)
-  return 1;
- return 0;
+   return -1;
+  if (nameA > nameB)
+   return 1;
+  return 0;
    });
 
 
-    let elementIndex=0;
-    let prevValue='';
-   jobs.forEach(value=>{
-       if(value.country===prevValue.country){
-        numOfJobsArray[elementIndex-1]++;
-       }else{
-           countryArray.push(value.country);
-           numOfJobsArray.push(1);
-           elementIndex++;
-       }
+  let elementIndex=0;
+  let prevValue='';
+  jobs.forEach(value=>{
+  if(value.country===prevValue.country){
+    numOfJobsArray[elementIndex-1]++;
+   }else{
+    countryArray.push(value.country);
+    numOfJobsArray.push(1);
+    elementIndex++;
+   }
 
    prevValue=value;
    })
 
-//For the second chart
+//HERE SECOND CHART DATA
+//we separete the data to obtain two arrays for the x and y axes for the second chart
 let countriesArray=[];
 let datesArray=[];
 
@@ -61,7 +66,7 @@ jobs.forEach(value=>{
     datesArray.push(dateFormated.toLocaleDateString());
 })
 
-//Implementing Responsive Charts size
+//Implementing Responsive Chart size variable
 let responsiveSize=window.innerWidth;
 if(window.innerWidth>=750){
 responsiveSize=720;
@@ -73,9 +78,9 @@ responsiveSize=720;
         
 
     <div className="ChartJobs">
-<Plot
-className="PlotOne"
-data={[
+    <Plot
+        className="PlotOne"
+        data={[
           {
             x: [...countryArray],
             y: [...numOfJobsArray],
@@ -92,12 +97,12 @@ data={[
                   yaxis:{showline:true,mirror: 'ticks',linecolor:'#f2feff', linewidth:3}
                   } }
         config={{responsive: true}}
-/>
+    />
 
 
-<Plot
-className="PlotTwo"
-data={[
+    <Plot
+        className="PlotTwo"
+        data={[
           {
             x: [...countriesArray],
             y: [...datesArray],
@@ -115,11 +120,8 @@ data={[
                   } }
         config={{responsive: true}}
 
-/>
-</div>
-
-)
-
-}
+    />
+    </div>
+    )}
 
 export default ChartJobs;

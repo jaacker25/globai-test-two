@@ -19,6 +19,9 @@ body {
       monospace;
   }
 
+
+  /*Scroll Bar Perzonalized*/
+
   /* width */
 ::-webkit-scrollbar {
     width: 8px;
